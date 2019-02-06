@@ -22,7 +22,7 @@
                             <b-form-input id="phonenumber" type="number" v-model="form.phonenumber" required placeholder="Phone Number">
                             </b-form-input>
                         </b-form-group>
-                        <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary">Add Contact</b-button>
+                        <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary"><b>Add Contact</b></b-button>
                     </b-form>
                 </b-card> 
                 </b-col>
@@ -33,7 +33,7 @@
                                 <b-list-group-item v-for="(contact, index) in contacts" :key="contact.id">
                                     Name: {{contact.firstname}} {{contact.lastname}} 
                                     Phone: {{contact.phonenumber}} 
-                                    <b-button class="btn btn-danger btn-sm" style="float:right" v-on:click="deleteContact(index)">Delete</b-button>
+                                    <b-button class="btn btn-danger btn-sm" style="float:right" v-on:click="deleteContact(index)"><b>Delete</b></b-button>
                                 </b-list-group-item>
                             </b-list-group>
                         </b-card>

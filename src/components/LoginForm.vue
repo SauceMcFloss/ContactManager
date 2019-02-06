@@ -18,8 +18,8 @@
                 <b-form-input id="password" type="password" v-model="form.password" required placeholder="Enter password">
                 </b-form-input>
             </b-form-group>
-            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary">Login</b-button>
-            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeRegister()">Register</b-button>
+            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary"><b>Login</b></b-button>
+            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeRegister()"><b>Don't have an account?</b></b-button>
             </b-form>
         </b-card>
     </b-container>

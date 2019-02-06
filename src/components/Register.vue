@@ -24,9 +24,9 @@
 
                     </b-form-input>
                 </b-form-group>
-                <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary">Register</b-button>
-                <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger">Reset</b-button>
-				<b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeLogin()">Already have an account?</b-button>
+                <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary"><b>Register</b></b-button>
+                <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger"><b>Reset</b></b-button>
+				<b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeLogin()"><b>Already have an account?</b></b-button>
 			</b-form>
         </b-card>
     </b-container>
