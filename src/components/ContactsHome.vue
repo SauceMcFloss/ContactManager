@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import router from '../router'
 import axios from 'axios';
 import EventBus from '../event-bus.js'
 
@@ -113,7 +114,11 @@ export default {
             this.contacts.splice(index, 1);
             console.log("Deleted!");
 
-        }
+        },
+		routeLogin() {
+		  router.push('/login');
+		  alert("You have been logged out");
+		}
     }  
 }
 </script>
