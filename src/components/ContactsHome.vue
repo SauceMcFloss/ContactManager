@@ -4,6 +4,7 @@
             <b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
             <b-navbar-nav class="ml-auto"></b-navbar-nav>
         </b-navbar>
+		<br></br>
         <b-container>
             <b-row>
                 <b-col>

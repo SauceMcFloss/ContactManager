@@ -4,6 +4,7 @@
 		<b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
 		<b-navbar-nav class="ml-auto"></b-navbar-nav>
 	</b-navbar>
+	<br></br>
     <b-container>
         <b-card style="background-color:#000000; border-color:#B79A62;">
             <h2 style="color:#F2C413;">Register</h2>
