@@ -1,8 +1,9 @@
 <template>
     <div style="background-color:#231F20; min-height:100vh;">
         <b-navbar style="color:#231F20; background-color:#B79A62; border-color:#231F20;">
-            <b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
+            <b-navbar-brand><b>Yeet Another Contact Manager</b></b-navbar-brand>
             <b-navbar-nav class="ml-auto"></b-navbar-nav>
+			<b-button style="color:#B79A62; background-color:#231F20; border-color:#B79A62;" type="reset" variant="danger" @click="routeLogin()"><b>Logout</b></b-button>
         </b-navbar>
 		<br></br>
         <b-container>

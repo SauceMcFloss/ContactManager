@@ -1,7 +1,7 @@
 <template>
 <div style="background-color:#231F20; min-height:100vh;">
 	<b-navbar style="color:#231F20; background-color:#B79A62; border-color:#231F20;">
-		<b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
+		<b-navbar-brand><b>Yeet Another Contact Manager</b></b-navbar-brand>
 		<b-navbar-nav class="ml-auto"></b-navbar-nav>
 		<img src="./UCF_Pegasus_Logo.jpg" alt="UCF Pegasus">
 	</b-navbar>
