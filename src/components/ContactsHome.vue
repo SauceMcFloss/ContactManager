@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <b-navbar type="dark" variant="dark">
+    <div style="background-color:#000000; min-height:100vh;">
+        <b-navbar style="color:#000000; background-color:#B79A62; border-color:#000000;">
             <b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
             <b-navbar-nav class="ml-auto"></b-navbar-nav>
         </b-navbar>
         <b-container>
             <b-row>
                 <b-col>
-                    <b-card>
+                    <b-card  style="background-color:#000000; color:#F2C413; border-color:#B79A62;">
                     <b-form v-show="true" @submit="onSubmit">
                         <b-form-group id="firstnameGroup" label="First Name:" label-for="firstname">
                             <b-form-input id="firstname" type="text" v-model="form.firstname" required placeholder="First Name">
@@ -21,7 +21,7 @@
                             <b-form-input id="phonenumber" type="number" v-model="form.phonenumber" required placeholder="Phone Number">
                             </b-form-input>
                         </b-form-group>
-                        <b-button type="submit" variant="primary">Add Contact</b-button>
+                        <b-button style="color:#000000; background-color:#B79A62; border-color:#000000;" type="submit" variant="primary">Add Contact</b-button>
                     </b-form>
                 </b-card> 
                 </b-col>

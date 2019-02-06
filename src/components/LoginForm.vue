@@ -2,7 +2,7 @@
 <div style="background-color:#000000; min-height:100vh;">
     <b-container>
 	<h3 style="color:#F2C413;">Team YIKES</h3>
-        <b-card style="background-color:#000000;">
+        <b-card style="background-color:#000000;  border-color:#B79A62;">
             <h2 style="color:#F2C413;">Login</h2>
             <b-form @submit="onSubmit" v-if="show">
             <b-form-group style="color:#F2C413;" id="username" label="Username:" label-for="username">
