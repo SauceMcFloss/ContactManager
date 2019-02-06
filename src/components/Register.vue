@@ -1,8 +1,11 @@
 <template>
 <div style="background-color:#000000; min-height:100vh;">
+	<b-navbar style="color:#000000; background-color:#B79A62; border-color:#000000;">
+		<b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
+		<b-navbar-nav class="ml-auto"></b-navbar-nav>
+	</b-navbar>
     <b-container>
-        <h3 style="color:#F2C413;">Team YIKES</h3>
-        <b-card style="background-color:#000000;">
+        <b-card style="background-color:#000000; border-color:#B79A62;">
             <h2 style="color:#F2C413;">Register</h2>
             <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                 <!-- <b-form-group id="emailaddress" label="Email Address:" label-for="emailaddress">
