@@ -22,6 +22,7 @@
             </b-form>
         </b-card>
     </b-container>
+	<img src="./UCF_Pegasus_Logo.jpg" alt="UCF Pegasus">
   </div>
 </template>
 
