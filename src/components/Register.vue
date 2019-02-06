@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import router from '../router'
 import axios from 'axios';
-import EventBus from '../event-bus.js'
+import router from '../router.js';
+import {EventBus} from '../event-bus.js';
 
 export default {
 data () {
@@ -62,30 +62,42 @@ data () {
 
   methods: {
 
-    // On submit we POST data to the api 
+    // Function registers user and redirects to login
     onSubmit (evt) {
+
+      // Prevent submission without completion
       evt.preventDefault();
-      //alert(JSON.stringify(this.form));
 
 	  if(this.form.password != this.form.confirm){
 		  alert("Passwords don't match! Registration unsuccessful.");
 	  }
 	  else{
+	  	// JSON payload format
 		  var formPayload = {
 			username: this.form.username,
 			password: this.form.password,
 		  }
 
-		  let uri = 'http://157.230.2.57:3000/user/register';
+		  // Set the uri that axios needs
+		  var uri = 'http://157.230.2.57:3000/user/register';
+		  
+		  // Axios post request to the address above
 		  axios.post(uri, formPayload).then(function(response){
-			console.log(response.data);
+		  
+			  // Set to localstorage 
+			  localStorage.setItem('userId', response.data._id);
+		  
+			  // Push to login page so user can now login again
+			  router.push('/login');
 		  })
 		  
+		  // Post message to user on success
 		  alert("Registration successful!");
-		  router.push('/login');
 	  }
 
     },
+
+    // Function to reset the form
     onReset (evt) {
       evt.preventDefault();
       this.form.username='',

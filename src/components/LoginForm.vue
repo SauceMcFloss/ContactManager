@@ -29,7 +29,7 @@
 <script>
 import router from '../router'
 import axios from 'axios'
-import EventBus from '../event-bus.js'
+import {EventBus} from '../event-bus.js'
 
 export default {
 data () {
@@ -45,7 +45,6 @@ data () {
   methods: {
     onSubmit (evt) {
       evt.preventDefault();
-      // alert(JSON.stringify(this.form));
 
       // Store the username and password in 2 variables
       var formPayload = {
@@ -53,16 +52,14 @@ data () {
         password: this.form.password,
       }
 
+      // Axios POST call using (url, formpayload above)
       let uri = 'http://157.230.2.57:3000/user/login';
-      var userId;
       axios.post(uri, formPayload).then(function(response) {
-        var userId = response.data.userId;
-        EventBus.$emit('userRegistration', userId);
-        console.log('UserId Returned is: ' + userId);
-      })
+
 
       // After login submission we we want to redirect the page to the contacts home page
       router.push('/contactshome');
+      });
     },
 
     routeRegister() {

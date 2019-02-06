@@ -48,7 +48,7 @@
 <script>
 import router from '../router'
 import axios from 'axios';
-import EventBus from '../event-bus.js'
+import {EventBus} from '../event-bus.js'
 
 export default {  
 
@@ -56,6 +56,7 @@ export default {
 
         return {
             
+            // Form data for adding contacts
             form: {
                 firstname:'',
                 lastname:'',
@@ -68,46 +69,48 @@ export default {
         }
     },
 
-    created() {
-        // Fetches the contacts for that user upon load
-        this.fetchContacts();
+    // Lifecycle hook: Will fire when component is mounted. Here we have our event listener
+    mounted() {
+        this.getAllContacts();
     },
 
     methods: {
-        
-        // Fetch contacts method; called above in created()
-        fetchContacts()
-        {   
-            // Holds the current user's ID
-            var currUserId;
 
-            // Event bus catches the user id from postman request so it can be used below to get current contacts in DB
-            EventBus.$on('userRegistration', userId => {
-                console.log('The user logged in ID is: ' + userId);
-                currUserId = { userId };
-                console.log("Current user ID is: " + currUserId);
-            })
-
+        getAllContacts()
+        {
+            // Holds the user ID needed for Axios call later
+            var currentUserId = { userId : localStorage.getItem('userId')};
+            
+            // API call to get all contacts
             let uri = 'http://157.230.2.57:3000/contacts/getAllContacts';
-            // Get all current contacts in DB for this user
-            axios.post(uri, currUserId).then(function(response) {
-                console.log(response.data.contacts);
-                // this.contacts = this.contacts.concat(response.data.contacts);
-            })
+            axios.post(uri, currentUserId).then(function(response) {
 
+                console.log(response.data);
 
-
+                // Push contacts here
+            });
         },
 
+        // Add contact onto the arraylist
         onSubmit(evt)
         {
-            alert(JSON.stringify(this.form));
-            console.log("Add Contact button fired");
+            // alert(JSON.stringify(this.form));
 
-            // This will push the contact from the add contact form onto the contacts list 
-            // this.contacts.push({firstname: this.form.firstname, lastname: this.form.lastname, phonenumber: this.form.phonenumber});          
+            var addContactForm = {
+                firstName: this.form.firstname,
+                lastName: this.form.lastname,
+                phoneNumber: this.form.phonenumber
+            }
 
-        },  
+            // // This will push the contact from the add contact form onto the contacts list 
+            // let uri = 'http://localhost:3000/contacts/addContact'
+            // axios.post(uri, addContactForm).then(function(response){
+            //     console.log(response.data.message);
+            //     this.contactId
+            // })
+
+                  
+        },
 
         // Delete the contact from the contacts array above
         deleteContact: function(index) {
