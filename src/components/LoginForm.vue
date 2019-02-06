@@ -3,6 +3,7 @@
 	<b-navbar style="color:#231F20; background-color:#B79A62; border-color:#231F20;">
 		<b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
 		<b-navbar-nav class="ml-auto"></b-navbar-nav>
+		<img src="./UCF_Pegasus_Logo.jpg" alt="UCF Pegasus">
 	</b-navbar>
 	<br></br>
     <b-container>
@@ -22,7 +23,6 @@
             </b-form>
         </b-card>
     </b-container>
-	<img src="./UCF_Pegasus_Logo.jpg" alt="UCF Pegasus">
   </div>
 </template>
 
