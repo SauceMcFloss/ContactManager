@@ -14,16 +14,25 @@
                     
                     </b-form-input>
                 </b-form-group> -->
+
                 <b-form-group style="color:#F2C413;" id="username" label="Username:" label-for="username">
                     <b-form-input id="username" type="text" v-model="form.username" required placeholder="Enter username">
 
                     </b-form-input>
                 </b-form-group>
+				
                 <b-form-group style="color:#F2C413;" id="password" label="Password:" label-for="password">
                     <b-form-input id="password" type="password" v-model="form.password" required placeholder="Enter password">
 
                     </b-form-input>
                 </b-form-group>
+				
+				<b-form-group style="color:#F2C413;" id="confirm" label="Confirm Password:" label-for="confirm">
+                    <b-form-input id="confirm" type="password" required placeholder="Re-enter password">
+
+                    </b-form-input>
+                </b-form-group>
+				
                 <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary"><b>Register</b></b-button>
                 <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger"><b>Reset</b></b-button>
 				<b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeLogin()"><b>Already have an account?</b></b-button>
@@ -45,6 +54,7 @@ data () {
         // emailaddress:'',
         username: '',
         password: '',
+		confirm: '',
       },
       show: true
     }
@@ -55,23 +65,31 @@ data () {
     // On submit we POST data to the api 
     onSubmit (evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      //alert(JSON.stringify(this.form));
 
-      var formPayload = {
-        username: this.form.username,
-        password: this.form.password,
-      }
+	  if(password.value != confirm.value){
+		  alert("Passwords don't match");
+	  }
+	  else{
+	  
+		  var formPayload = {
+			username: this.form.username,
+			password: this.form.password,
+		  }
 
-      let uri = 'http://157.230.2.57:3000/user/register';
-      axios.post(uri, formPayload).then(function(response){
-        console.log(response.data);
-      })
+		  let uri = 'http://157.230.2.57:3000/user/register';
+		  axios.post(uri, formPayload).then(function(response){
+			console.log(response.data);
+		  })
+		  
+	  }
 
     },
     onReset (evt) {
       evt.preventDefault();
       this.form.username='',
-      this.form.password=''
+      this.form.password='',
+	  this.form.confirm=''
     },
 	routeLogin() {
       router.push('/login');
