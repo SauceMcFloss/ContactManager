@@ -7,7 +7,7 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <b-card  style="background-color:#000000; color:#F2C413; border-color:#B79A62;">
+                    <b-card style="background-color:#000000; color:#F2C413; border-color:#B79A62;">
                     <b-form v-show="true" @submit="onSubmit">
                         <b-form-group id="firstnameGroup" label="First Name:" label-for="firstname">
                             <b-form-input id="firstname" type="text" v-model="form.firstname" required placeholder="First Name">
@@ -27,7 +27,7 @@
                 </b-col>
                 <b-col> 
                     <b-card-group>
-                        <b-card header="<b>Contacts</b>">
+                        <b-card style="background-color:#000000; color:#F2C413; border-color:#B79A62;" header="<b>Contacts</b>">
                             <b-list-group>
                                 <b-list-group-item v-for="(contact, index) in contacts" :key="contact.id">
                                     Name: {{contact.firstname}} {{contact.lastname}} 
