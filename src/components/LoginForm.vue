@@ -1,12 +1,12 @@
 <template>
-<div style="background-color:#000000; min-height:100vh;">
-	<b-navbar style="color:#000000; background-color:#B79A62; border-color:#000000;">
+<div style="background-color:#231F20; min-height:100vh;">
+	<b-navbar style="color:#231F20; background-color:#B79A62; border-color:#231F20;">
 		<b-navbar-brand>Yeet Another Contact Manager</b-navbar-brand>
 		<b-navbar-nav class="ml-auto"></b-navbar-nav>
 	</b-navbar>
 	<br></br>
     <b-container>
-        <b-card style="background-color:#000000; border-color:#B79A62;">
+        <b-card style="background-color:#231F20; border-color:#B79A62;">
             <h2 style="color:#F2C413;">Login</h2>
             <b-form @submit="onSubmit" v-if="show">
             <b-form-group style="color:#F2C413;" id="username" label="Username:" label-for="username">
@@ -17,8 +17,8 @@
                 <b-form-input id="password" type="password" v-model="form.password" required placeholder="Enter password">
                 </b-form-input>
             </b-form-group>
-            <b-button style="color:#000000; background-color:#B79A62; border-color:#000000;" type="submit" variant="primary">Login</b-button>
-            <b-button style="color:#000000; background-color:#B79A62; border-color:#000000;" type="reset" variant="danger" @click="routeRegister()">Register</b-button>
+            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary">Login</b-button>
+            <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeRegister()">Register</b-button>
             </b-form>
         </b-card>
     </b-container>
