@@ -26,13 +26,15 @@
                 </b-form-group>
                 <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="submit" variant="primary">Register</b-button>
                 <b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger">Reset</b-button>
-            </b-form>
+				<b-button style="color:#231F20; background-color:#B79A62; border-color:#231F20;" type="reset" variant="danger" @click="routeLogin()">Already have an account?</b-button>
+			</b-form>
         </b-card>
     </b-container>
   </div>
 </template>
 
 <script>
+import router from '../router'
 import axios from 'axios';
 import EventBus from '../event-bus.js'
 
@@ -70,6 +72,9 @@ data () {
       evt.preventDefault();
       this.form.username='',
       this.form.password=''
+    },
+	routeLogin() {
+      router.push('/login');
     }
   }
 }
